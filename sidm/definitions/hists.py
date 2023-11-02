@@ -53,6 +53,58 @@ hist_defs = {
                    lambda objs, mask: objs["pvs"].rho),
         ],
     ),
+    
+    #GSFelectron
+     "electron_GsfEleDEtaInSeedCut": h.Histogram(
+        [ 
+            h.Axis(hist.axis.Regular(500, 0, .00487, name="electron_GsfEleDEtaInSeedCut"),
+                   lambda objs, mask: objs["electrons"].GsfEleDEtaInSeedCut_0),
+        ],
+    ),
+     "electron_GsfEleDPhiInCut": h.Histogram(
+        [ 
+            h.Axis(hist.axis.Regular(1000, 0, .0450, name="electron_GsfEleDPhiInCut"),
+                   lambda objs, mask: objs["electrons"].GsfEleDPhiInCut_0),
+        ],
+    ),
+    "electron_GsfEleEInverseMinusPInverseCut": h.Histogram(
+        [
+            h.Axis(hist.axis.Regular(100, 0, .11, name="electron_GsfEleEInverseMinusPInverseCut"),
+                   lambda objs, mask: objs["electrons"].GsfEleEInverseMinusPInverseCut_0),
+        ],
+    ),
+    "electron_GsfEleRelPFIsoScaledCut": h.Histogram(
+        [
+            h.Axis(hist.axis.Regular(100, 0, .15, name="electron_GsfEleRelPFIsoScaledCut"),
+                   lambda objs, mask: objs["electrons"].GsfEleRelPFIsoScaledCut_0),
+        ],
+    ),
+    "electron_GsfEleFull5x5SigmaIEtaIEtaCut": h.Histogram(
+        [ 
+            h.Axis(hist.axis.Regular(1000, 0, .0450, name="electron_GsfEleFull5x5SigmaIEtaIEtaCut"),
+                   lambda objs, mask: objs["electrons"].GsfEleFull5x5SigmaIEtaIEtaCut_0),
+        ],
+    ),
+    "electron_GsfEleConversionVetoCut": h.Histogram(
+        [ 
+            h.Axis(hist.axis.Regular(10, 0, 10, name="electron_GsfEleConversionVetoCut"),
+                   lambda objs, mask: objs["electrons"].GsfEleConversionVetoCut_0),
+        ],
+    ),
+    "electron_GsfEleHadronicOverEMEnergyScaledCut": h.Histogram(
+         [
+             h.Axis(hist.axis.Regular(500, 0, .3, name="electron_GsfEleHadronicOverEMEnergyScaledCut"), 
+                    lambda objs, mask: objs["electrons"].GsfEleHadronicOverEMEnergyScaledCut_0),
+         ],
+     ),
+    "electron_GsfEleMissingHitsCut": h.Histogram(
+        [
+            h.Axis(hist.axis.Regular(10, 0, 10, name="electron_GsfEleMissingHitsCut"),
+                   lambda objs, mask: objs["electrons"].GsfEleMissingHitsCut_0),
+        ],
+    ),
+  
+
     # pfelectron
     "electron_n": h.Histogram(
         [
