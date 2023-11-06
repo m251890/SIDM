@@ -57,7 +57,7 @@ hist_defs = {
     #GSFelectron
      "electron_GsfEleDEtaInSeedCut": h.Histogram(
         [ 
-            h.Axis(hist.axis.Regular(30, 0, .00487, name="electron_GsfEleDEtaInSeedCut"),
+            h.Axis(hist.axis.Regular(30, 0, .0065, name="electron_GsfEleDEtaInSeedCut"),
                    lambda objs, mask: objs["electrons"].GsfEleDEtaInSeedCut_0),
         ],
     ),
@@ -87,7 +87,7 @@ hist_defs = {
     ),
     "electron_GsfEleConversionVetoCut": h.Histogram(
         [ 
-            h.Axis(hist.axis.Regular(10, 0, 10, name="electron_GsfEleConversionVetoCut"),
+            h.Axis(hist.axis.Regular(20, 0, 5, name="electron_GsfEleConversionVetoCut"),
                    lambda objs, mask: objs["electrons"].GsfEleConversionVetoCut_0),
         ],
     ),
