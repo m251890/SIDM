@@ -63,25 +63,25 @@ hist_defs = {
     ),
      "electron_GsfEleDPhiInCut": h.Histogram(
         [ 
-            h.Axis(hist.axis.Regular(50, 0, .0450, name="electron_GsfEleDPhiInCut"),
+            h.Axis(hist.axis.Regular(35, 0, .0450, name="electron_GsfEleDPhiInCut"),
                    lambda objs, mask: objs["electrons"].GsfEleDPhiInCut_0),
         ],
     ),
     "electron_GsfEleEInverseMinusPInverseCut": h.Histogram(
         [
-            h.Axis(hist.axis.Regular(50, 0, .107, name="electron_GsfEleEInverseMinusPInverseCut"),
+            h.Axis(hist.axis.Regular(45, 0, .3, name="electron_GsfEleEInverseMinusPInverseCut"),
                    lambda objs, mask: objs["electrons"].GsfEleEInverseMinusPInverseCut_0),
         ],
     ),
     "electron_GsfEleRelPFIsoScaledCut": h.Histogram(
         [
-            h.Axis(hist.axis.Regular(75, 0, .2, name="electron_GsfEleRelPFIsoScaledCut"),
+            h.Axis(hist.axis.Regular(40, 0, .2, name="electron_GsfEleRelPFIsoScaledCut"),
                    lambda objs, mask: objs["electrons"].GsfEleRelPFIsoScaledCut_0),
         ],
     ),
     "electron_GsfEleFull5x5SigmaIEtaIEtaCut": h.Histogram(
         [ 
-            h.Axis(hist.axis.Regular(50, 0, .0450, name="electron_GsfEleFull5x5SigmaIEtaIEtaCut"),
+            h.Axis(hist.axis.Regular(35, 0, .0450, name="electron_GsfEleFull5x5SigmaIEtaIEtaCut"),
                    lambda objs, mask: objs["electrons"].GsfEleFull5x5SigmaIEtaIEtaCut_0),
         ],
     ),
@@ -93,7 +93,7 @@ hist_defs = {
     ),
     "electron_GsfEleHadronicOverEMEnergyScaledCut": h.Histogram(
          [
-             h.Axis(hist.axis.Regular(50, 0, .15, name="electron_GsfEleHadronicOverEMEnergyScaledCut"), 
+             h.Axis(hist.axis.Regular(30, 0, .15, name="electron_GsfEleHadronicOverEMEnergyScaledCut"), 
                     lambda objs, mask: objs["electrons"].GsfEleHadronicOverEMEnergyScaledCut_0),
          ],
      ),
