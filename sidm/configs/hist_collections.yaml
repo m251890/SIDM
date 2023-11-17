@@ -18,6 +18,15 @@ electron_extra: &electron_extra
   - "electron_GsfEleConversionVetoCut"
   - "electron_GsfEleHadronicOverEMEnergyScaledCut"
   - "electron_GsfEleMissingHitsCut"
+  - "electron_GsfEleDEtaInSeedCut_endcap"
+  - "electron_GsfEleDPhiInCut_endcap"
+  - "electron_GsfEleEInverseMinusPInverseCut_endcap"
+  - "electron_GsfEleFull5x5SigmaIEtaIEtaCut_endcap"
+  - "electron_GsfEleRelPFIsoScaledCut_endcap"
+  - "electron_GsfEleConversionVetoCut_endcap"
+  - "electron_GsfEleHadronicOverEMEnergyScaledCut_endcap"
+  - "electron_GsfEleMissingHitsCut_endcap"
+  - "electron_GsfEleDEtaInSeedCut_endcap"
   
 electron_base: &electron_base
   - "electron_n"

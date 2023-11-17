@@ -55,52 +55,103 @@ hist_defs = {
     ),
     
     #GSFelectron
+    
+    #mask of the barrel electrons with eta<1.479. Only include electrons near a dark photon that decays to electrons:
      "electron_GsfEleDEtaInSeedCut": h.Histogram(
         [ 
             h.Axis(hist.axis.Regular(30, 0, .0065, name="electron_GsfEleDEtaInSeedCut"),
-                   lambda objs, mask: objs["electrons"].GsfEleDEtaInSeedCut_0),
+                   lambda objs, mask: objs["electrons"][(abs(objs["electrons"].eta) < 1.479) & (dR(objs["electrons"], objs["genAs_toE"]) < 0.5)].GsfEleDEtaInSeedCut_0),
+        ],
+    ),
+    #mask of the endcap electrons with eta>1.479. Only include electrons near a dark photon that decays to electrons:
+    "electron_GsfEleDEtaInSeedCut_endcap": h.Histogram(
+        [ 
+            h.Axis(hist.axis.Regular(30, 0, .0065, name="electron_GsfEleDEtaInSeedCut_endcap"),
+                   lambda objs, mask: objs["electrons"][(abs(objs["electrons"].eta) > 1.479) & (dR(objs["electrons"], objs["genAs_toE"]) < 0.5)].GsfEleDEtaInSeedCut_0),
         ],
     ),
      "electron_GsfEleDPhiInCut": h.Histogram(
         [ 
             h.Axis(hist.axis.Regular(35, 0, .0450, name="electron_GsfEleDPhiInCut"),
-                   lambda objs, mask: objs["electrons"].GsfEleDPhiInCut_0),
+                   lambda objs, mask: objs["electrons"][(abs(objs["electrons"].eta) < 1.479) & (dR(objs["electrons"], objs["genAs_toE"]) < 0.5)].GsfEleDPhiInCut_0),
+        ],
+    ),
+    "electron_GsfEleDPhiInCut_endcap": h.Histogram(
+        [ 
+            h.Axis(hist.axis.Regular(35, 0, .0450, name="electron_GsfEleDPhiInCut_end"),
+                   lambda objs, mask: objs["electrons"][(abs(objs["electrons"].eta) > 1.479) & (dR(objs["electrons"], objs["genAs_toE"]) < 0.5)].GsfEleDPhiInCut_0),
         ],
     ),
     "electron_GsfEleEInverseMinusPInverseCut": h.Histogram(
         [
             h.Axis(hist.axis.Regular(45, 0, .3, name="electron_GsfEleEInverseMinusPInverseCut"),
-                   lambda objs, mask: objs["electrons"].GsfEleEInverseMinusPInverseCut_0),
+                   lambda objs, mask: objs["electrons"][(abs(objs["electrons"].eta) < 1.479) & (dR(objs["electrons"], objs["genAs_toE"]) < 0.5)].GsfEleEInverseMinusPInverseCut_0),
+        ],
+    ),
+    "electron_GsfEleEInverseMinusPInverseCut_endcap": h.Histogram(
+        [
+            h.Axis(hist.axis.Regular(45, 0, .3, name="electron_GsfEleEInverseMinusPInverseCut_endcap"),
+                   lambda objs, mask: objs["electrons"][(abs(objs["electrons"].eta) > 1.479) & (dR(objs["electrons"], objs["genAs_toE"]) < 0.5)].GsfEleEInverseMinusPInverseCut_0),
         ],
     ),
     "electron_GsfEleRelPFIsoScaledCut": h.Histogram(
         [
             h.Axis(hist.axis.Regular(40, 0, .2, name="electron_GsfEleRelPFIsoScaledCut"),
-                   lambda objs, mask: objs["electrons"].GsfEleRelPFIsoScaledCut_0),
+                   lambda objs, mask: objs["electrons"][(abs(objs["electrons"].eta) < 1.479) & (dR(objs["electrons"], objs["genAs_toE"]) < 0.5)].GsfEleRelPFIsoScaledCut_0),
+        ],
+    ),
+     "electron_GsfEleRelPFIsoScaledCut_endcap": h.Histogram(
+        [
+            h.Axis(hist.axis.Regular(40, 0, .2, name="electron_GsfEleRelPFIsoScaledCut_endcap"),
+                   lambda objs, mask: objs["electrons"][(abs(objs["electrons"].eta) > 1.479) & (dR(objs["electrons"], objs["genAs_toE"]) < 0.5)].GsfEleRelPFIsoScaledCut_0),
         ],
     ),
     "electron_GsfEleFull5x5SigmaIEtaIEtaCut": h.Histogram(
         [ 
             h.Axis(hist.axis.Regular(35, 0, .0450, name="electron_GsfEleFull5x5SigmaIEtaIEtaCut"),
-                   lambda objs, mask: objs["electrons"].GsfEleFull5x5SigmaIEtaIEtaCut_0),
+                   lambda objs, mask: objs["electrons"][(abs(objs["electrons"].eta) < 1.479) & (dR(objs["electrons"], objs["genAs_toE"]) < 0.5)].GsfEleFull5x5SigmaIEtaIEtaCut_0),
+        ],
+    ),
+    "electron_GsfEleFull5x5SigmaIEtaIEtaCut_endcap": h.Histogram(
+        [ 
+            h.Axis(hist.axis.Regular(35, 0, .0450, name="electron_GsfEleFull5x5SigmaIEtaIEtaCut_endcap"),
+                   lambda objs, mask: objs["electrons"][(abs(objs["electrons"].eta) > 1.479) & (dR(objs["electrons"], objs["genAs_toE"]) < 0.5)].GsfEleFull5x5SigmaIEtaIEtaCut_0),
         ],
     ),
     "electron_GsfEleConversionVetoCut": h.Histogram(
         [ 
-            h.Axis(hist.axis.Regular(20, 0, 5, name="electron_GsfEleConversionVetoCut"),
-                   lambda objs, mask: objs["electrons"].GsfEleConversionVetoCut_0),
+            h.Axis(hist.axis.Integer(0, 2, name="electron_GsfEleConversionVetoCut"),
+                   lambda objs, mask: objs["electrons"][(abs(objs["electrons"].eta) < 1.479) & (dR(objs["electrons"], objs["genAs_toE"]) < 0.5)].GsfEleConversionVetoCut_0),
+        ],
+    ),
+    "electron_GsfEleConversionVetoCut_endcap": h.Histogram(
+        [ 
+            h.Axis(hist.axis.Integer(0, 2, name="electron_GsfEleConversionVetoCut_endcap"),
+                   lambda objs, mask: objs["electrons"][(abs(objs["electrons"].eta) > 1.479) & (dR(objs["electrons"], objs["genAs_toE"]) < 0.5)].GsfEleConversionVetoCut_0),
         ],
     ),
     "electron_GsfEleHadronicOverEMEnergyScaledCut": h.Histogram(
          [
              h.Axis(hist.axis.Regular(30, 0, .15, name="electron_GsfEleHadronicOverEMEnergyScaledCut"), 
-                    lambda objs, mask: objs["electrons"].GsfEleHadronicOverEMEnergyScaledCut_0),
+                    lambda objs, mask: objs["electrons"][(abs(objs["electrons"].eta) < 1.479) & (dR(objs["electrons"], objs["genAs_toE"]) < 0.5)].GsfEleHadronicOverEMEnergyScaledCut_0),
+         ],
+     ),
+    "electron_GsfEleHadronicOverEMEnergyScaledCut_endcap": h.Histogram(
+         [
+             h.Axis(hist.axis.Regular(30, 0, .15, name="electron_GsfEleHadronicOverEMEnergyScaledCut_endcap"), 
+                    lambda objs, mask: objs["electrons"][(abs(objs["electrons"].eta) > 1.479) & (dR(objs["electrons"], objs["genAs_toE"]) < 0.5)].GsfEleHadronicOverEMEnergyScaledCut_0),
          ],
      ),
     "electron_GsfEleMissingHitsCut": h.Histogram(
         [
-            h.Axis(hist.axis.Regular(10, 0, 6, name="electron_GsfEleMissingHitsCut"),
-                   lambda objs, mask: objs["electrons"].GsfEleMissingHitsCut_0),
+            h.Axis(hist.axis.Integer(0, 10, name="electron_GsfEleMissingHitsCut"),
+                   lambda objs, mask: objs["electrons"][(abs(objs["electrons"].eta) < 1.479) & (dR(objs["electrons"], objs["genAs_toE"]) < 0.5)].GsfEleMissingHitsCut_0),
+        ],
+    ),
+    "electron_GsfEleMissingHitsCut_endcap": h.Histogram(
+        [
+            h.Axis(hist.axis.Integer(0, 10, name="electron_GsfEleMissingHitsCut_endcap"),
+                   lambda objs, mask: objs["electrons"][(abs(objs["electrons"].eta) > 1.479) & (dR(objs["electrons"], objs["genAs_toE"]) < 0.5)].GsfEleMissingHitsCut_0),
         ],
     ),
   
