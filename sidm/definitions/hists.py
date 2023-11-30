@@ -51,19 +51,32 @@ hist_defs = {
         [
             h.Axis(hist.axis.Regular(100, -0.5, 0.5, name="pv_rho"),
                    lambda objs, mask: objs["pvs"].rho),
-        ],
+        ]
     ),
     
     #GSFelectron
     
-    #mask of the barrel electrons with eta<1.479. Only include electrons near a dark photon that decays to electrons:
      "electron_GsfEleDEtaInSeedCut": h.Histogram(
         [ 
             h.Axis(hist.axis.Regular(30, 0, .0065, name="electron_GsfEleDEtaInSeedCut"),
                    lambda objs, mask: objs["electrons"][(abs(objs["electrons"].eta) < 1.479) & (dR(objs["electrons"], objs["genAs_toE"]) < 0.5)].GsfEleDEtaInSeedCut_0),
         ],
     ),
-    #mask of the endcap electrons with eta>1.479. Only include electrons near a dark photon that decays to electrons:
+    #will continue on this thursday
+     "electron_GsfEleDEtaInSeedCut2d": h.Histogram(
+        [  # lxy of dark photon that decays to electrons
+            h.Axis(hist.axis.Regular(100, 0, 500, name="genA_lxy",
+                                     label=r"Dark photon $L_{xy}$ [cm]"),
+                   lambda objs, mask: lxy(objs["genAs_toE"])[mask]), 
+            
+            h.Axis(hist.axis.Regular(30, 0, .0065, name="electron_GsfEleDEtaInSeedCut"),
+                   lambda objs, mask: objs["electrons"][(abs(objs["electrons"].eta) < 1.479) & (dR(objs["electrons"], objs["genAs_toE"]) < 0.5)][mask, 0:1].GsfEleDEtaInSeedCut_0)  
+             
+        ],
+         evt_mask = lambda objs: ak.num(objs["electrons"][(abs(objs["electrons"].eta) < 1.479) & (dR(objs["electrons"], objs["genAs_toE"]) < 0.5)])>0
+
+     ),
+    
     "electron_GsfEleDEtaInSeedCut_endcap": h.Histogram(
         [ 
             h.Axis(hist.axis.Regular(30, 0, .0065, name="electron_GsfEleDEtaInSeedCut_endcap"),
@@ -184,6 +197,20 @@ hist_defs = {
                    lambda objs, mask: ak.num(matched(objs["electrons"], objs["genAs_toE"], 0.5))),
         ],
     ),
+  
+     "electron_nearGenA_n_genA_lxy": h.Histogram(
+        [
+            # lxy of dark photon that decays to electrons
+            h.Axis(hist.axis.Regular(100, 0, 500, name="genA_lxy",
+                                     label=r"Dark photon $L_{xy}$ [cm]"),
+                   lambda objs, mask: lxy(objs["genAs_toE"])),
+            # number of electrons within dR=0.5 of a genA that decays to electrons
+            h.Axis(hist.axis.Integer(0, 4, name="electron_nearGenA_n", label="$N_{e}$"),
+                   lambda objs, mask: ak.num(objs["electrons"][dR(objs["electrons"],
+                                                              objs["genAs_toE"]) < 0.5])),
+        ],
+    ),
+    
     # pfelectron-genA
     "electron_nearGenA_n_genA_lxy": h.Histogram(
         [
