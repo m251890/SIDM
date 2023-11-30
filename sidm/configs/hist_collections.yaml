@@ -27,6 +27,7 @@ electron_extra: &electron_extra
   - "electron_GsfEleHadronicOverEMEnergyScaledCut_endcap"
   - "electron_GsfEleMissingHitsCut_endcap"
   - "electron_GsfEleDEtaInSeedCut_endcap"
+  - "electron_GsfEleDEtaInSeedCut2d"
   
 electron_base: &electron_base
   - "electron_n"
