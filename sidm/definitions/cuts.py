@@ -27,6 +27,9 @@ obj_cut_defs = {
     },
     "electrons": {
         "pT > 10 GeV": lambda objs: objs["electrons"].pt > 10,
+        "|eta| < 1.479": lambda objs: abs(objs["electrons"].eta) < 1.479,
+        "1.479 < |eta| < 2.4": lambda objs: ((abs(objs["electrons"].eta) > 1.479)&
+                                             (abs(objs["electrons"].eta) < 2.4)),
         "|eta| < 2.4": lambda objs: abs(objs["electrons"].eta) < 2.4,
         #Loose ID = bit 1
         "looseID": lambda objs: check_bit(objs["electrons"].idResults,1),
