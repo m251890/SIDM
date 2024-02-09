@@ -296,7 +296,8 @@ class SidmProcessor(processor.ProcessorABC):
                     channel_cuts[channel]["obj"][obj] = []
                 channel_cuts[channel]["obj"][obj] = utilities.flatten(obj_cuts)
 
-            channel_cuts[channel]["evt"] = utilities.flatten(cuts["evt_cuts"])
+            if "evt_cuts" in cuts:
+                channel_cuts[channel]["evt"] = utilities.flatten(cuts["evt_cuts"])
             if "lj_cuts" in cuts:
                 channel_cuts[channel]["lj"]["ljs"] = utilities.flatten(cuts["lj_cuts"])
             else:
