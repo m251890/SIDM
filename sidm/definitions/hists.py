@@ -90,7 +90,7 @@ hist_defs = {
     ),
     "electron_GsfEleDPhiInCut2d": h.Histogram(
         [  # lxy of dark photon that decays to electrons
-            h.Axis(hist.axis.Regular(60, 0, 100, name="genA_lxy",
+            h.Axis(hist.axis.Regular(100, 0, 500, name="genA_lxy",
                                      label=r"Dark photon $L_{xy}$ [cm]"),
                    lambda objs, mask: lxy(objs["genAs_toE"])[mask]), 
             
@@ -245,7 +245,7 @@ hist_defs = {
                                      label=r"Dark photon $L_{xy}$ [cm]"),
                    lambda objs, mask: lxy(objs["genAs_toE"])[mask]), 
             
-            h.Axis(hist.axis.Regular(10, 0, 1, name="electron_GsfEleMissingHitsCut"),
+            h.Axis(hist.axis.Regular(10, 0, 10, name="electron_GsfEleMissingHitsCut"),
                    lambda objs, mask: objs["electrons"][(abs(objs["electrons"].eta) < 1.479) & (dR(objs["electrons"], objs["genAs_toE"]) < 0.5)][mask, 0:1].GsfEleMissingHitsCut_0)  
              
         ],
