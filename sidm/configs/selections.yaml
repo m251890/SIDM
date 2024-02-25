@@ -133,3 +133,23 @@ endcapE: &endcapE
   obj_cuts: &obj_endcapE
     electrons: 
       - "1.479 < |eta| < 2.4"
+      
+##Loose reco electrons in the barrel
+looseBarrelE: &looseBarrelE
+  evt_cuts: 
+    - "Keep all evts"
+  obj_cuts: &obj_looseBarrelE
+    electrons: 
+      - "|eta| < 1.479"
+      - "pT > 10 GeV"
+      - "looseID"
+ 
+##Loose reco electrons in the endcaps
+looseEndcapE: &looseEndcapE
+  evt_cuts: 
+    - "Keep all evts"
+  obj_cuts: &obj_looseEndcapE
+    electrons: 
+      - "1.479 < |eta| < 2.4"
+      - "pT > 10 GeV"
+      - "looseID"

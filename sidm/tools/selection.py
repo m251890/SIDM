@@ -32,10 +32,7 @@ class Selection:
         # apply event cuts to object collections
         sel_objs = {}
         for name, obj in objs.items():
-            if self.all_evt_cuts is not None:
-                sel_objs[name] = obj[self.all_evt_cuts.all(*self.evt_cuts)]
-            else: 
-                sel_objs[name] = obj
+            sel_objs[name] = obj[self.all_evt_cuts.all(*self.evt_cuts)]
         return sel_objs
 
 
