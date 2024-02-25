@@ -120,12 +120,16 @@ baseNoLj_veryDisplacedA: &baseNoLj_veryDisplacedA
 #Selections for electrons only
 ##All reco electrons in the barrel
 barrelE: &barrelE
+  evt_cuts: 
+    - "Keep all evts"
   obj_cuts: &obj_barrelE
     electrons: 
       - "|eta| < 1.479"
  
 ##All reco electrons in the endcaps
 endcapE: &endcapE
+  evt_cuts: 
+    - "Keep all evts"
   obj_cuts: &obj_endcapE
     electrons: 
       - "1.479 < |eta| < 2.4"
