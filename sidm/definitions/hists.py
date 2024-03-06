@@ -77,7 +77,7 @@ hist_defs = {
      ),
      "electron_GsfEleDPhiInCut": h.Histogram(
         [ 
-            h.Axis(hist.axis.Regular(35, 0, .0450, name="electron_GsfEleDPhiInCut"),
+            h.Axis(hist.axis.Regular(35, 0, .095, name="electron_GsfEleDPhiInCut"),
                    lambda objs, mask: objs["electrons"][(dR(objs["electrons"], objs["genAs_toE"]) < 0.5)].GsfEleDPhiInCut_0),
         ],
     ),
@@ -87,7 +87,7 @@ hist_defs = {
                                      label=r"Dark photon $L_{xy}$ [cm]"),
                    lambda objs, mask: lxy(objs["genAs_toE"])[mask]), 
             
-            h.Axis(hist.axis.Regular(35, 0, .0450, name="electron_GsfEleDPhiInCut"),
+            h.Axis(hist.axis.Regular(35, 0, .095, name="electron_GsfEleDPhiInCut"),
                    lambda objs, mask: objs["electrons"][dR(objs["electrons"], objs["genAs_toE"]) < 0.5][mask, 0:1].GsfEleDPhiInCut_0)  
              
         ],
@@ -96,7 +96,7 @@ hist_defs = {
      ),
     "electron_GsfEleEInverseMinusPInverseCut": h.Histogram(
         [
-            h.Axis(hist.axis.Regular(45, 0, .3, name="electron_GsfEleEInverseMinusPInverseCut"),
+            h.Axis(hist.axis.Regular(45, 0, .35, name="electron_GsfEleEInverseMinusPInverseCut"),
                    lambda objs, mask: objs["electrons"][(dR(objs["electrons"], objs["genAs_toE"]) < 0.5)].GsfEleEInverseMinusPInverseCut_0),
         ],
     ), 
@@ -106,7 +106,7 @@ hist_defs = {
                                      label=r"Dark photon $L_{xy}$ [cm]"),
                    lambda objs, mask: lxy(objs["genAs_toE"])[mask]), 
             
-            h.Axis(hist.axis.Regular(45, 0, .3, name="electron_GsfEleEInverseMinusPInverseCut"),
+            h.Axis(hist.axis.Regular(45, 0, .35, name="electron_GsfEleEInverseMinusPInverseCut"),
                    lambda objs, mask: objs["electrons"][dR(objs["electrons"], objs["genAs_toE"]) < 0.5][mask, 0:1].GsfEleEInverseMinusPInverseCut_0)  
              
         ],
@@ -132,7 +132,7 @@ hist_defs = {
      ),
     "electron_GsfEleFull5x5SigmaIEtaIEtaCut": h.Histogram(
         [ 
-            h.Axis(hist.axis.Regular(35, 0, .0450, name="electron_GsfEleFull5x5SigmaIEtaIEtaCut"),
+            h.Axis(hist.axis.Regular(35, 0, .03, name="electron_GsfEleFull5x5SigmaIEtaIEtaCut"),
                    lambda objs, mask: objs["electrons"][(dR(objs["electrons"], objs["genAs_toE"]) < 0.5)].GsfEleFull5x5SigmaIEtaIEtaCut_0),
         ],
     ),
@@ -141,9 +141,9 @@ hist_defs = {
             h.Axis(hist.axis.Regular(100, 0, 500, name="genA_lxy",
                                      label=r"Dark photon $L_{xy}$ [cm]"),
                    lambda objs, mask: lxy(objs["genAs_toE"])[mask]), 
-            #
-            h.Axis(hist.axis.Regular(35, 0, .0450, name="electron_GsfEleFull5x5SigmaIEtaIEtaCut"),
-                   lambda objs, mask: objs["electrons"][dR(objs["electrons"], objs["genAs_toE"]) < 0.5][mask, 0:1].GsfEleRelPFIsoScaledCut_0)  
+            
+            h.Axis(hist.axis.Regular(35, 0, .03, name="electron_GsfEleFull5x5SigmaIEtaIEtaCut"),
+                   lambda objs, mask: objs["electrons"][dR(objs["electrons"], objs["genAs_toE"]) < 0.5][mask, 0:1].GsfEleFull5x5SigmaIEtaIEtaCut_0)  
              
         ],
          evt_mask = lambda objs: ak.num(objs["electrons"][dR(objs["electrons"], objs["genAs_toE"]) < 0.5])>0
