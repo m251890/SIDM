@@ -153,3 +153,37 @@ looseEndcapE: &looseEndcapE
       - "1.479 < |eta| < 2.4"
       - "pT > 10 GeV"
       - "looseID"
+      
+barrelE_ID-sigmaetaIeta: &barrelE_ID-sigmaIetaIeta
+  evt_cuts: 
+    - "Keep all evts"
+  obj_cuts:
+    electrons: 
+      - "|eta| < 1.479"
+      - "barrel DPhiInCut"
+      - "barrel DEtaInSeedCut"
+      - "barrel InverseCut"
+      - "barrel Iso" 
+      - #"barrel ConversionVeto"
+      - "barrel H/E"
+      - "barrel MissingHits"
+
+barrelE_ID-DPhiIn: &barrelE_ID-DPhiIn
+  evt_cuts: 
+    - "Keep all evts"
+  obj_cuts:
+    electrons: 
+      - "|eta| < 1.479"
+      - "barrel SigmaIEtaIEtaCut"
+      - "barrel DEtaInSeedCut"
+      - "barrel InverseCut"
+      - "barrel Iso" 
+      - #"barrel ConversionVeto"
+      - "barrel H/E"
+      - "barrel MissingHits"
+      
+#will continue with the other 6 ID's
+      
+    
+      
+      

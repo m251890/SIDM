@@ -33,7 +33,17 @@ obj_cut_defs = {
         "|eta| < 2.4": lambda objs: abs(objs["electrons"].eta) < 2.4,
         #Loose ID = bit 1
         "looseID": lambda objs: check_bit(objs["electrons"].idResults,1),
-    },
+        "barrel SigmaIEtaIEtaCut": lambda objs: (abs(objs["electrons"].GsfEleFull5x5SigmaIEtaIEtaCut2d_0) < .0112),
+        "barrel DEtaInSeedCut": lambda objs: (abs(objs["electrons"].GsfEleDEtaInSeedCut_0) < .00377),
+        "barrel DPhiInCut": lambda objs: (abs(objs["electrons"].GsfEleDPhiInCut_0) < .0884),
+        "barrel InverseCut" lambda objs: (abs(objs["electrons"].GsfEleEInverseMinusPInverseCut_0) < .193),
+        "barrel Iso" lambda objs: (abs(objs["electrons"].GsfEleRelPFIsoScaledCut_0) < .112),
+        #not sure to put 2 or 1 for its bounds "barrel ConversionVeto" lambda objs: (abs(objs["electrons"].GsfEleConversionVetoCut) < 2),
+        "barrel H/E" lambda objs: (abs(objs["electrons"].GsfEleHadronicOverEMEnergyScaledCut_0) < .05),
+        "barrel MissingHits" lambda objs: (abs(objs["electrons"].GsfEleMissingHitsCut_0) < 1), 
+    }, 
+                                                                                                                                
+                                                                       
     "muons": {
         #Loose ID = bit 0
         #See https://gitlab.cern.ch/areinsvo/Firefighter/-/blob/master/ffNtuple/plugins/ffNtupleMuon.cc
@@ -78,3 +88,4 @@ evt_cut_defs = {
     "2mu2e": lambda objs: ((ak.count_nonzero(objs["ljs"][:, :2].muon_n >= 2, axis=-1) == 1)
                            & (ak.count_nonzero(objs["ljs"][:, :2].muon_n == 0, axis=-1) == 1)),
 }
+
