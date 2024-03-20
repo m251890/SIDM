@@ -164,7 +164,7 @@ barrelE_ID-sigmaetaIeta: &barrelE_ID-sigmaIetaIeta
       - "barrel DEtaInSeedCut"
       - "barrel InverseCut"
       - "barrel Iso" 
-      - #"barrel ConversionVeto"
+      - "barrel ConversionVeto"
       - "barrel H/E"
       - "barrel MissingHits"
 
@@ -177,8 +177,8 @@ barrelE_ID-DPhiIn: &barrelE_ID-DPhiIn
       - "barrel SigmaIEtaIEtaCut"
       - "barrel DEtaInSeedCut"
       - "barrel InverseCut"
-      - "barrel Iso" 
-      - #"barrel ConversionVeto"
+      - "barrel Iso"
+      - "barrel ConversionVeto"
       - "barrel H/E"
       - "barrel MissingHits"
       
