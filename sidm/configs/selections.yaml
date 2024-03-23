@@ -181,9 +181,89 @@ barrelE_ID-DPhiIn: &barrelE_ID-DPhiIn
       - "barrel ConversionVeto"
       - "barrel H/E"
       - "barrel MissingHits"
-      
-#will continue with the other 6 ID's
-      
     
+barrelE_ID-EtaInSeed: &barrelE_ID-EtaInSeed
+  evt_cuts: 
+    - "Keep all evts"
+  obj_cuts:
+    electrons: 
+      - "|eta| < 1.479"
+      - "barrel SigmaIEtaIEtaCut"
+      - "barrel DPhiInCut"
+      - "barrel InverseCut"
+      - "barrel Iso"
+      - "barrel ConversionVeto"
+      - "barrel H/E"
+      - "barrel MissingHits"
+      
+barrelE_ID-Inverse: &barrelE_ID-Inverse
+  evt_cuts: 
+    - "Keep all evts"
+  obj_cuts:
+    electrons: 
+      - "|eta| < 1.479"
+      - "barrel SigmaIEtaIEtaCut"
+      - "barrel DPhiInCut"
+      - "barrel DEtaInSeedCut"
+      - "barrel Iso"
+      - "barrel ConversionVeto"
+      - "barrel H/E"
+      - "barrel MissingHits"
+      
+barrelE_ID-Iso: &barrelE_ID-Iso
+  evt_cuts: 
+    - "Keep all evts"
+  obj_cuts:
+    electrons: 
+      - "|eta| < 1.479"
+      - "barrel SigmaIEtaIEtaCut"
+      - "barrel DPhiInCut"
+      - "barrel DEtaInSeedCut"
+      - "barrel InverseCut"
+      - "barrel ConversionVeto"
+      - "barrel H/E"
+      - "barrel MissingHits"
+      
+barrelE_ID-ConversionVeto: &barrelE_ID-ConversionVeto
+  evt_cuts: 
+    - "Keep all evts"
+  obj_cuts:
+    electrons: 
+      - "|eta| < 1.479"
+      - "barrel SigmaIEtaIEtaCut"
+      - "barrel DPhiInCut"
+      - "barrel DEtaInSeedCut"
+      - "barrel InverseCut"
+      - "barrel Iso"
+      - "barrel H/E"
+      - "barrel MissingHits"
+    
+barrelE_ID-HE: &barrelE_ID-HE
+  evt_cuts: 
+    - "Keep all evts"
+  obj_cuts:
+    electrons: 
+      - "|eta| < 1.479"
+      - "barrel SigmaIEtaIEtaCut"
+      - "barrel DPhiInCut"
+      - "barrel DEtaInSeedCut"
+      - "barrel InverseCut"
+      - "barrel Iso"
+      - "barrel ConversionVeto"
+      - "barrel MissingHits"
+
+barrelE_ID-MissingHits: &barrelE_ID-MissingHits
+  evt_cuts: 
+    - "Keep all evts"
+  obj_cuts:
+    electrons: 
+      - "|eta| < 1.479"
+      - "barrel SigmaIEtaIEtaCut"
+      - "barrel DPhiInCut"
+      - "barrel DEtaInSeedCut"
+      - "barrel InverseCut"
+      - "barrel Iso"
+      - "barrel ConversionVeto"
+      - "barrel H/E"
       
       
