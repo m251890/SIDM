@@ -115,17 +115,18 @@ hist_defs = {
     "electron_GsfEleRelPFIsoScaledCut": h.Histogram(
         [
             h.Axis(hist.axis.Regular(40, 0, .2, name="electron_GsfEleRelPFIsoScaledCut"),
-                   lambda objs, mask: objs["electrons"][(dR(objs["electrons"], objs["genAs_toE"]) < 0.5)].GsfEleRelPFIsoScaledCut_0),
+                   lambda objs, mask: objs["electrons"][(dR(objs["electrons"], objs["genAs_toE"]) < 0.5)].GsfEleRelPFIsoScaledCut_0 - .506/(objs["electrons"][(dR(objs["electrons"], objs["genAs_toE"]) < 0.5)].pt)),
         ],
     ),
      "electron_GsfEleRelPFIsoScaledCut2d": h.Histogram(
         [  # lxy of dark photon that decays to electrons
+            #added the alegbra relIso has in the analysis note
             h.Axis(hist.axis.Regular(500, 0, 500, name="genA_lxy",
                                      label=r"Dark photon $L_{xy}$ [cm]"),
                    lambda objs, mask: lxy(objs["genAs_toE"])[mask]), 
             
             h.Axis(hist.axis.Regular(40, 0, .2, name="electron_GsfEleRelPFIsoScaledCut"),
-                   lambda objs, mask: objs["electrons"][dR(objs["electrons"], objs["genAs_toE"]) < 0.5][mask, 0:1].GsfEleRelPFIsoScaledCut_0)  
+                   lambda objs, mask: objs["electrons"][dR(objs["electrons"], objs["genAs_toE"]) < 0.5][mask, 0:1].GsfEleRelPFIsoScaledCut_0 - .506/(objs["electrons"][(dR(objs["electrons"], objs["genAs_toE"]) < 0.5)][mask, 0:1].pt)),
              
         ],
          evt_mask = lambda objs: ak.num(objs["electrons"][dR(objs["electrons"], objs["genAs_toE"]) < 0.5])>0
