@@ -4,6 +4,7 @@
 import hist
 import awkward as ak
 
+
 class Histogram:
     """Class to represent histograms
 

@@ -26,7 +26,7 @@ class Selection:
         # evaluate all selected cuts
         for cut in self.evt_cuts:
             if verbose:
-                print("Applying cut: ",cut)
+                print("Applying cut: ", cut)
             self.all_evt_cuts.add(cut, evt_cut_defs[cut](objs))
 
         # apply event cuts to object collections

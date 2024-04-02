@@ -116,63 +116,63 @@ baseNoLj_veryDisplacedA: &baseNoLj_veryDisplacedA
     <<: *obj_baseNoLj
     genAs:
       - "lxy >= 100 cm"
-      
-#Selections for electrons only
-##All reco electrons in the barrel
+
+# Selections for electrons only
+# All reco electrons in the barrel
 barrelE: &barrelE
-  evt_cuts: 
+  evt_cuts:
     - "Keep all evts"
   obj_cuts: &obj_barrelE
-    electrons: 
+    electrons:
       - "|eta| < 1.479"
- 
-##All reco electrons in the endcaps
+
+# All reco electrons in the endcaps
 endcapE: &endcapE
-  evt_cuts: 
+  evt_cuts:
     - "Keep all evts"
   obj_cuts: &obj_endcapE
-    electrons: 
+    electrons:
       - "1.479 < |eta| < 2.4"
-      
-##Loose reco electrons in the barrel
+
+# Loose reco electrons in the barrel
 looseBarrelE: &looseBarrelE
-  evt_cuts: 
+  evt_cuts:
     - "Keep all evts"
   obj_cuts: &obj_looseBarrelE
-    electrons: 
+    electrons:
       - "|eta| < 1.479"
       - "pT > 10 GeV"
       - "looseID"
- 
-##Loose reco electrons in the endcaps
+
+# Loose reco electrons in the endcaps
 looseEndcapE: &looseEndcapE
-  evt_cuts: 
+  evt_cuts:
     - "Keep all evts"
   obj_cuts: &obj_looseEndcapE
-    electrons: 
+    electrons:
       - "1.479 < |eta| < 2.4"
       - "pT > 10 GeV"
       - "looseID"
-      
+
 barrelE_ID-sigmaetaIeta: &barrelE_ID-sigmaIetaIeta
-  evt_cuts: 
+  evt_cuts:
     - "Keep all evts"
   obj_cuts:
-    electrons: 
+    electrons:
       - "|eta| < 1.479"
       - "barrel DPhiInCut"
       - "barrel DEtaInSeedCut"
       - "barrel InverseCut"
-      - "barrel Iso" 
+      - "barrel Iso"
       - "barrel ConversionVeto"
       - "barrel H/E"
       - "barrel MissingHits"
 
 barrelE_ID-DPhiIn: &barrelE_ID-DPhiIn
-  evt_cuts: 
+  evt_cuts:
     - "Keep all evts"
   obj_cuts:
-    electrons: 
+    electrons:
       - "|eta| < 1.479"
       - "barrel SigmaIEtaIEtaCut"
       - "barrel DEtaInSeedCut"
@@ -181,12 +181,12 @@ barrelE_ID-DPhiIn: &barrelE_ID-DPhiIn
       - "barrel ConversionVeto"
       - "barrel H/E"
       - "barrel MissingHits"
-    
+
 barrelE_ID-EtaInSeed: &barrelE_ID-EtaInSeed
-  evt_cuts: 
+  evt_cuts:
     - "Keep all evts"
   obj_cuts:
-    electrons: 
+    electrons:
       - "|eta| < 1.479"
       - "barrel SigmaIEtaIEtaCut"
       - "barrel DPhiInCut"
@@ -195,12 +195,12 @@ barrelE_ID-EtaInSeed: &barrelE_ID-EtaInSeed
       - "barrel ConversionVeto"
       - "barrel H/E"
       - "barrel MissingHits"
-      
+
 barrelE_ID-Inverse: &barrelE_ID-Inverse
-  evt_cuts: 
+  evt_cuts:
     - "Keep all evts"
   obj_cuts:
-    electrons: 
+    electrons:
       - "|eta| < 1.479"
       - "barrel SigmaIEtaIEtaCut"
       - "barrel DPhiInCut"
@@ -209,12 +209,12 @@ barrelE_ID-Inverse: &barrelE_ID-Inverse
       - "barrel ConversionVeto"
       - "barrel H/E"
       - "barrel MissingHits"
-      
+
 barrelE_ID-Iso: &barrelE_ID-Iso
-  evt_cuts: 
+  evt_cuts:
     - "Keep all evts"
   obj_cuts:
-    electrons: 
+    electrons:
       - "|eta| < 1.479"
       - "barrel SigmaIEtaIEtaCut"
       - "barrel DPhiInCut"
@@ -223,12 +223,12 @@ barrelE_ID-Iso: &barrelE_ID-Iso
       - "barrel ConversionVeto"
       - "barrel H/E"
       - "barrel MissingHits"
-      
+
 barrelE_ID-ConversionVeto: &barrelE_ID-ConversionVeto
-  evt_cuts: 
+  evt_cuts:
     - "Keep all evts"
   obj_cuts:
-    electrons: 
+    electrons:
       - "|eta| < 1.479"
       - "barrel SigmaIEtaIEtaCut"
       - "barrel DPhiInCut"
@@ -237,12 +237,12 @@ barrelE_ID-ConversionVeto: &barrelE_ID-ConversionVeto
       - "barrel Iso"
       - "barrel H/E"
       - "barrel MissingHits"
-    
+
 barrelE_ID-HE: &barrelE_ID-HE
-  evt_cuts: 
+  evt_cuts:
     - "Keep all evts"
   obj_cuts:
-    electrons: 
+    electrons:
       - "|eta| < 1.479"
       - "barrel SigmaIEtaIEtaCut"
       - "barrel DPhiInCut"
@@ -253,10 +253,10 @@ barrelE_ID-HE: &barrelE_ID-HE
       - "barrel MissingHits"
 
 barrelE_ID-MissingHits: &barrelE_ID-MissingHits
-  evt_cuts: 
+  evt_cuts:
     - "Keep all evts"
   obj_cuts:
-    electrons: 
+    electrons:
       - "|eta| < 1.479"
       - "barrel SigmaIEtaIEtaCut"
       - "barrel DPhiInCut"
@@ -265,5 +265,3 @@ barrelE_ID-MissingHits: &barrelE_ID-MissingHits
       - "barrel Iso"
       - "barrel ConversionVeto"
       - "barrel H/E"
-      
-      
