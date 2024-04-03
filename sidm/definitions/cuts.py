@@ -31,6 +31,7 @@ obj_cut_defs = {
         "1.479 < |eta| < 2.4": lambda objs: ((abs(objs["electrons"].eta) > 1.479)&
                                              (abs(objs["electrons"].eta) < 2.4)),
         "|eta| < 2.4": lambda objs: abs(objs["electrons"].eta) < 2.4,
+        "dR(e, A) < 0.5": lambda objs: dR(objs["electrons"], objs["genAs_toE"]) < 0.5,
         #Loose ID = bit 1
         "looseID": lambda objs: check_bit(objs["electrons"].idResults,1),
         "barrel SigmaIEtaIEtaCut": lambda objs: (objs["electrons"].GsfEleFull5x5SigmaIEtaIEtaCut_0) < .0112,
