@@ -18,6 +18,8 @@ electron_extra: &electron_extra
   - "electron_GsfEleConversionVetoCut"
   - "electron_GsfEleHadronicOverEMEnergyScaledCut"
   - "electron_GsfEleMissingHitsCut"
+
+electron_extra_2d: &electron_extra_2d
   - "electron_GsfEleDEtaInSeedCut2d"
   - "electron_GsfEleDPhiInCut2d"
   - "electron_GsfEleEInverseMinusPInverseCut2d"
@@ -77,7 +79,7 @@ lj_isolation: &lj_isolation
   - "lj_pfIsolation07"
   - "lj_pfIsolationPtNoPU07" # not in v2 ntuples
   - "lj_pfIsolationPt07" # not in v2 ntuples
-  - "lj_pfiso"
+  #- "lj_pfiso"
 
 ljsource_base: &ljsource_base
   - "ljsource_n"
