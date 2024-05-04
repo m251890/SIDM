@@ -18,6 +18,7 @@ electron_extra: &electron_extra
   - "electron_GsfEleConversionVetoCut"
   - "electron_GsfEleHadronicOverEMEnergyScaledCut"
   - "electron_GsfEleMissingHitsCut"
+  - "electron_GenA_Lxy"
 
 electron_extra_2d: &electron_extra_2d
   - "electron_GsfEleDEtaInSeedCut2d"

@@ -55,6 +55,13 @@ hist_defs = {
     ),
     # GSFelectron: Plottting electron ID varaiables and plotting 2D hists of the leading electron
     # ID variables in barrel within Delta R < .5 of a dark photon vs the lxy of the dark photon
+    "electron_GenA_Lxy": h.Histogram(
+        [  # lxy of dark photon that decays to electrons
+            h.Axis(hist.axis.Regular(500, 0, 500, name="genA_lxy",
+                                     label=r"Dark photon $L_{xy}$ [cm]"),
+                   lambda objs, mask: lxy(objs["genAs_toE"])[mask])],
+        evt_mask = lambda objs: ak.num(matched(objs["electrons"], objs["genAs_toE"], 0.5)) > 1,
+    ),
     "electron_GsfEleDEtaInSeedCut": h.Histogram(
         [
             h.Axis(hist.axis.Regular(35, 0, .0070, name="electron_GsfEleDEtaInSeedCut"),
