@@ -117,11 +117,11 @@ def get_eff_hist(num_hist, denom_hist):
     """Returns the histogram of num_hist/denom_hist and a 2D numpy array of the up/down errors on the efficiency. Plot the errors using yerr=errors when plotting. """
     denom_vals  = denom_hist.values()
     num_vals   = num_hist.values()
-    #This will get rid of divide by 0 error
-    small_number = 1e-9
 
     errors = hist.intervals.ratio_uncertainty(num_vals,denom_vals,'efficiency')
-    eff_values = num_vals/(denom_vals+small_number)
+    small_num= 1e-9
+    eff_values = num_vals/(denom_vals + small_num)
+   
 
     eff_hist = hist.Hist(*num_hist.axes)
     eff_hist.values()[:] = eff_values
